@@ -1,0 +1,8 @@
+<form action= '' method="post">
+{% csrf_token %}
+    <label for="your_text">Your sentence: </label>
+    <input id="your_text" type="text" name="your_text" value="{{enter_text}}">
+    <input type="submit" value="OK">
+</form>
+
+<p>The category result is <b>{{prediction}}</b></p>
