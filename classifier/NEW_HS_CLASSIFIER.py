@@ -10,8 +10,7 @@ from sklearn.pipeline import Pipeline
 import spacy
 import pandas as pd
 import pickle
-import copy
-
+import os
 
 from sqlalchemy import create_engine
 
@@ -38,7 +37,10 @@ dictionary_transph = {
 'trannie'
 }
 
-engine = create_engine('sqlite:///C:\\Users\\alana\\Documents\\GitHub\\Toxicity-Classifier\\db.sqlite3')
+db_file=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
+
+
+engine = create_engine('sqlite:///'+db_file)
 
 df = pd.read_sql_table("classifier_sub", engine)
 #print(df)
@@ -94,8 +96,11 @@ class Feature_model:
                 previous_lemma = False
         return features
     
-    def fit(self,x,y):
-        self.pipe.fit(x, y)
+    def fit(self, filename):
+        df = pd.read_sql_table("classifier_sub", engine)
+        self.pipe.fit(df.content, df.label)
+        with open(filename, mode='wb') as f:
+            pickle.dump(self, f)
 #        predicted_train = pipe.predict(x_train)
 #        predicted_test = pipe.predict(x_test)
 #        score = pipe.score(x_test, y_test)
@@ -105,21 +110,7 @@ class Feature_model:
 
 
 
-x = []
 
-x = df.content
-
-y = []
-
-y = df.label
-
-
-
-x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=0)
-
-
-model = Feature_model()
-model.fit(x,y)
 
 ## Extracting features using either a Count or TFIDF vectorizer
 #vectorizer = CountVectorizer(analyzer=copy.copy(preprocess))
@@ -154,12 +145,6 @@ model.fit(x,y)
 
 #trial_text = open("RACE.txt", encoding='utf-8').read()
 #print(pipe.predict([trial_text]))
-
-
-
-with open('classifier.pickle', mode='wb') as f:
-    pickle.dump(model, f)
-
 
 #def predict_class(sentence):
 #    pred_class = pipe.predict(sentence)

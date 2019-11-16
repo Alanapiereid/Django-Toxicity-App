@@ -40,6 +40,7 @@ def submit(request):
         enter_label = request.POST['class']
         s = sub(content=enter_text, label=enter_label)
         s.save()
+        model.fit(filename)
         return redirect('success')
     except KeyError:
         pass
