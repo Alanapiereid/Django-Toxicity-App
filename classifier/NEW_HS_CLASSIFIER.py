@@ -45,7 +45,7 @@ engine = create_engine('sqlite:///'+db_file)
 df = pd.read_sql_table("classifier_sub", engine)
 #print(df)
 
-nlp = spacy.load('en', disable=['parser'])
+nlp = spacy.load('en_core_web_sm', disable=['parser'])
 
 preprocessing = {
 'remove_quotes': True,
