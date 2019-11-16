@@ -109,7 +109,9 @@ class Feature_model:
     def predict(self, text):
         return self.pipe.predict([text])[0]
 
-
+if __name__ == '__main__':
+    model = Feature_model()
+    model.fit('C:\\Users\\alana\\Documents\\Code\\classifier.pickle')
 
 
 
