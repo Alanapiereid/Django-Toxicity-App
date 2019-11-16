@@ -4,10 +4,20 @@ import pickle
 import os
 from .models import sub
 from django.shortcuts import redirect
+from .NEW_HS_CLASSIFIER import Feature_model
+
+class CustomUnpickler(pickle.Unpickler):
+
+    def find_class(self, module, name):
+        if name == 'Feature_model':
+            return Feature_model
+        return super().find_class(module, name)
+
+
 
 filename = os.path.join(os.path.dirname(__file__), 'static', 'classifier', 'classifier.pickle')
 
-model = pickle.load(open(filename, mode='rb'))
+model = CustomUnpickler(open(filename, 'rb')).load()
 
 def home(request):
     return render(request, 'classifier/home_temp.html')
@@ -20,7 +30,7 @@ def predict(request):#, enter_text=''):
     if enter_text == '':
         prediction = ''
     else:
-        prediction = model.predict([enter_text])[0]
+        prediction = model.predict(enter_text)
     context = {'enter_text':enter_text, 'prediction': prediction}
     return render(request, 'classifier/predict_temp.html', context)
 

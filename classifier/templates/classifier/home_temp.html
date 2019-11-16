@@ -39,12 +39,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-times-circle w3-xxlarge"></i>
+  <a href="/classifier/predict" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-flag w3-xxlarge"></i>
     <p>PREDICTION</p>
   </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-flag w3-xxlarge"></i>
+  <a href="/classifier/submit" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-times-circle w3-xxlarge"></i>
     <p>SUBMISSION</p>
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
@@ -59,7 +59,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
     <a href="/classifier/predict" class="w3-bar-item w3-button" style="width:25% !important">PREDICTION</a>
     <a href="/classifier/submit" class="w3-bar-item w3-button" style="width:25% !important">SUBMISSION</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
 </div>
 
@@ -69,7 +69,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
   <div class="container">
-	  <img src="https://images.unsplash.com/photo-1564073259995-5b3e73577cfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" style="width:45%;">
 		<div class="centered">
 		<h1 class="w3-jumbo"><span class="w3-hide-small">Toxicity</span> Classifier</h1>
 		</div>
@@ -91,12 +90,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         prediction
       </div>
       <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">TRAIN</span><br>
-        classifier
-      </div>
-      <div class="w3-quarter w3-section">
         <span class="w3-xlarge">SUBMIT</span><br>
         text and class
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">TRAIN</span><br>
+        ML classifier
       </div>
       <div class="w3-quarter w3-section">
         <span class="w3-xlarge">TACKLE</span><br>
@@ -104,18 +103,18 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       </div>
     </div>
     
-    <!-- Grid for pricing tables -->
+    <!-- Grid for user explanation -->
     <h3 class="w3-padding-16 w3-text-light-grey">HELP IMPROVE THIS TOOL</h3>
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half w3-margin-bottom">
         <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
           <li class="w3-dark-grey w3-xlarge w3-padding-32">GET PREDICTION</li>
           <li class="w3-padding-16">Enter a sentence</li>
-          <li class="w3-padding-16">Program outputs a class</li>
+          <li class="w3-padding-16">The program outputs a class</li>
           <li class="w3-padding-16">
           </li>
           <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Go to PREDICTION page</button>
+            <a href="/classifier/predict"<button class="w3-button w3-white w3-padding-large w3-hover-black">Go to PREDICTION page</button></a>
           </li>
         </ul>
       </div>
@@ -127,11 +126,11 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
           <li class="w3-padding-16">Then submit a class</li>
           <li class="w3-padding-16">
           <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Go to SUBMISSION page</button>
+            <a href="/classifier/submit"<button class="w3-button w3-white w3-padding-large w3-hover-black">Go to SUBMISSION page</button></a>
           </li>
         </ul>
       </div>
-    <!-- End Grid/Pricing tables -->
+    <!-- End expanation for user -->
     </div>
     
 
