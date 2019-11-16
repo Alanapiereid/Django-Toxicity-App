@@ -111,7 +111,7 @@ class Feature_model:
 
 if __name__ == '__main__':
     model = Feature_model()
-    model.fit('C:\\Users\\alana\\Documents\\Code\\classifier.pickle')
+    model.fit('C:\\Users\\alana\\Documents\\GitHub\\Toxicity-Classifier\\classifier\\static\\classifier\\classifier.pickle')
 
 
 
