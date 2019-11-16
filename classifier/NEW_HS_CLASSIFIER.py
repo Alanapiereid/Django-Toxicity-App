@@ -12,6 +12,7 @@ import pandas as pd
 import pickle
 import os
 
+
 from sqlalchemy import create_engine
 
 
@@ -75,7 +76,7 @@ class Feature_model:
         self.clfrNB = MultinomialNB()
         # Create pipeline
         self.pipe = Pipeline([('vectorize', self.vectorizer),
-        ('classify', self.clfrNB)])
+        ('classify', self.clfrNB)], verbose=True)
        
 
     def preprocess(self, text):
