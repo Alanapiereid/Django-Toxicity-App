@@ -1,0 +1,5 @@
+django
+sklearn
+sqlalchemy
+spacy
+pandas
