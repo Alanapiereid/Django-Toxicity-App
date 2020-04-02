@@ -1,2 +1,3 @@
 # Toxicity-Classifier
- Classifier of toxic language
+
+Machine learning powered web app for toxic classification
