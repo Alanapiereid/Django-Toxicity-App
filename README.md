@@ -1,3 +1,3 @@
 # Toxicity-Classifier
 
-Machine learning powered web app for toxic classification
+Machine learning web app for toxic classification, using Django.
